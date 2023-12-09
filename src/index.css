@@ -8,6 +8,7 @@
 
 body{
   font-family: 'Montserrat', sans-serif;
+  height: 100vh;
 }
 
 /* === Nav === */
@@ -30,18 +31,35 @@ nav {
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  border: 1px solid tomato;
-  width: clamp(300px, 70vw, 1000px)
+  width: clamp(200px, 70vw, 800px);
+  padding: 1rem 0;
 }
 
 .card--item{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  margin-top: 1rem;
+  grid-template-columns:  1fr 1fr;
   grid-template-areas:
-    "img location location"
-    "img title title"
-    "img date date"
-    "img description description";
+    ". ."
+    "img img"
+    "img img"
+    "location location"
+    "title title"
+    "date date"
+    "description description"
+    "description description"
+    ". .";
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns:  1fr 1fr 1fr;
+    grid-template-areas:
+      ". . ."
+      "img location location"
+      "img title title"
+      "img  date date"
+      "img description description"
+      ". . .";
+  }
 }
 
 .card--img{
@@ -49,37 +67,64 @@ nav {
   object-fit: cover;
   grid-area: img;
   border-radius: 10px;
-  aspect-ratio: 3/4;
+  aspect-ratio: 2/1.5;
+
+  @media screen and (min-width: 768px) {
+   aspect-ratio: 3/4;
+  }
 }
 
 .card--location{
   grid-area: location;
   display: flex;
-  border: 1px solid tomato;
-  padding: 1rem;
+  align-items: center;
+  font-size: .8rem;
+  gap: .5em;
+  padding: .5em 0;
+
+  a{
+    color: rgb(143, 139, 139);
+  }
+  .location--img{
+    width: 1.2em;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 1rem;
+    .location--img{
+      width: 1.5em;
+    }
+  }
+
 }
+
+
 
 .card--title{
   grid-area: title;
-  border: 1px solid tomato;
-  padding: 1rem;
+  font-size: clamp(1rem, 3vw, 2rem);
 }
 
 .card--date{
   grid-area: date;
   display: flex;
-  border: 1px solid tomato;
-  align-items: flex-end;
-  padding: 0 1rem;
+  align-items: center;
+  font-size: .8rem;
+  font-weight: bold;
+  padding: .8em 0;
 }
 
 .card--info{
   grid-area: description;
-  display: flex;
-  align-items: flex-end;
-  border: 1px solid tomato;
-  margin-top: auto;
-  padding: 0 1rem 1rem 1rem;
+  line-height: 1.3;
+}
+
+@media screen and (min-width: 768px) {
+  .card--location,
+  .card--date,
+  .card--title,
+  .card--info{
+    padding: 0 1rem;
+  }
 }
 
 
