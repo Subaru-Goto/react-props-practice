@@ -16,15 +16,9 @@ export default function Cards(props) {
           <p>{props.location}</p>
           <a href={props.googleMapsUrl}>View on Google Maps</a>
         </div>
-        <div className="card--title">
-          <h2>{props.title}</h2>
-        </div>
-        <div className="card--date">
-          <p>{props.startDate} - {props.endDate}</p>
-        </div>
-        <div className="card--info">
-          <p>{props.description}</p>
-        </div>
+        <h2 className="card--title">{props.title}</h2>
+        <p className="card--date">{props.startDate} - {props.endDate}</p>
+        <p className="card--info">{props.description}</p>
       </div>
 
     </section>
