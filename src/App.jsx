@@ -5,7 +5,9 @@ import data from './data/data'
 export default function App() {
   const cards = data.map(data => {
     return(
-      <Cards {...data}/>
+      <Cards 
+        key={crypto.randomUUID()}
+        {...data}/>
     )
   })
 
