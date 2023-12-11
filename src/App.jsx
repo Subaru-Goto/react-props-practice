@@ -6,7 +6,7 @@ export default function App() {
   const cards = data.map(data => {
     return(
       <Cards 
-        key={crypto.randomUUID()}
+        key={data.id}
         {...data}/>
     )
   })

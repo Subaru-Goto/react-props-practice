@@ -1,5 +1,8 @@
+const getUUID = () => crypto.randomUUID();
+
 export default [
   {
+      id:getUUID(),
       title: "Mount Fuji",
       location: "Japan",
       googleMapsUrl: "https://goo.gl/maps/1DGM5WrWnATgkSNB8",
@@ -9,6 +12,7 @@ export default [
       imageUrl: "https://source.unsplash.com/WLxQvbMyfas"
   },
   {
+    id:getUUID(),
     title: "Sydney Opera House",
     location: "Australia",
     googleMapsUrl: "https://maps.app.goo.gl/Etk8o29snwSfTJR77",
@@ -18,6 +22,7 @@ export default [
     imageUrl: "https://images.unsplash.com/photo-1624138784614-87fd1b6528f8?q=80&w=1933&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
+    id:getUUID(),
     title: "Geirangerfjord",
     location: "NORWAY",
     googleMapsUrl: "https://maps.app.goo.gl/gSHPLZpLeomSWh4U7",
